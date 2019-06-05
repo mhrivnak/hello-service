@@ -18,9 +18,12 @@ spec:
         command:
         - hello
         image: quay.io/mhrivnak/hello-service
-        imagePullPolicy: IfNotPresent
+        imagePullPolicy: Always
         ports:
           - containerPort: 8080
+        env:
+          - name: GREETING
+            value: Hello
 
 ---
 apiVersion: v1
